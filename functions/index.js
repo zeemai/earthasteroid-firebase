@@ -2,7 +2,10 @@ const functions = require("firebase-functions");
 const express = require("express");
 const app = express();
 
+//for auth routes like liking an item
 const FBAuth = require("./util/fbAuth");
+const cors = require("cors");
+app.use(cors());
 
 const { signup, login, forgotPassword } = require("./handlers/users");
 
